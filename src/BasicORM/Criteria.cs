@@ -56,13 +56,13 @@ namespace BasicORM
 
         public static Criteria<TModel> GreaterThanOrEqual(string field,object value, QueryLogicalOperator queryOperator = QueryLogicalOperator.None)
         {
-            return new Criteria<TModel> (">", field, value, queryOperator);
+            return new Criteria<TModel> (">=", field, value, queryOperator);
         }
 
         public static Criteria<TModel> GreaterThanOrEqueal<TKey>(Expression<Func<TModel,TKey>> method, object value,QueryLogicalOperator queryLogicalOperator = QueryLogicalOperator.None)
         {
             string field=DebugField(method);
-            return new Criteria<TModel>(">", field, queryLogicalOperator);
+            return new Criteria<TModel>(">=", field, queryLogicalOperator);
         }
 
         public static Criteria<TModel> LessThan(string field,object value, QueryLogicalOperator queryLogicalOperator=QueryLogicalOperator.None)
